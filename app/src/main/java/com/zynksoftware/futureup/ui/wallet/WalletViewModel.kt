@@ -15,6 +15,7 @@ class WalletViewModel(
 ): ViewModel() {
 
     val coinsLiveData = MutableLiveData<List<CryptoModel>>()
+    val errorMessage = MutableLiveData<String>()
 
     fun getCoins() {
         viewModelScope.launch {
@@ -25,7 +26,7 @@ class WalletViewModel(
                             coinsLiveData.value = it.data!!
                         }
                         ERROR -> {
-
+                            errorMessage.value = it.message ?: ""
                         }
                         LOADING -> {
 

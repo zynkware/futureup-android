@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zynksoftware.futureup.databinding.FragmentWalletBinding
+import com.zynksoftware.futureup.extensions.navigateToNextDestination
 import com.zynksoftware.futureup.models.CardModel
 import com.zynksoftware.futureup.ui.adapters.crypto.CryptoAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -38,9 +40,17 @@ class WalletFragment : Fragment() {
             binding?.recyclerView?.adapter = adapter
         }
 
+        viewModel.errorMessage.observe(this) { error ->
+            Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
+        }
+
+        binding?.walletCardView?.setOnClickListener {
+            val direction = WalletFragmentDirections.actionWalletFragmentToPortfolioFragment()
+            navigateToNextDestination(direction)
+        }
+
         viewModel.getCoins()
         setUpTopCard()
-
     }
 
     override fun onDestroyView() {
