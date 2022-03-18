@@ -27,12 +27,11 @@ class CryptoViewHolder(private val binding: ViewHolderCryptoBinding) :
             )
             binding.percentageTextView.setTextColor(ContextCompat.getColor(context, R.color.green))
         }
-        if (item.image == null || item.image == "") {
+        if (item.image.isNullOrBlank()) {
             binding.imageBackgroundImageView.setBackgroundColor(
                 ContextCompat.getColor(context, R.color.circular_image_gray)
             )
         }
-
         binding.cryptoValueTextView.text = "${item.currentPrice} USD Value"
     }
 }
