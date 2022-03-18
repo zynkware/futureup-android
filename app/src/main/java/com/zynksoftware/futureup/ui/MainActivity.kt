@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         if (actionId == -1) {
             Toast.makeText(
                 this,
-                "Navigation destination not set yet!",
+                "Navigation destination not set yet",
                 Toast.LENGTH_SHORT
             ).show()
         } else {
