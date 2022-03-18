@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue">#4849D4</color>
 
     <color name="gray">#636363</color>
 
@@ -15,5 +16,13 @@
 
     <color name="red_opacity_50">#80F14E4E</color>
     <color name="green_opacity_50">#8045C232</color>
+
+    <color name="gradient_start">#5639ef</color>
+    <color name="gradient_end">#4548b5</color>
+    <color name="blue_gray">#897ee5</color>
+    <color name="circular_image_gray">#e9e9e9</color>
+    <color name="circular_image_green">#e2faec</color>
+    <color name="circular_image_red">#fee8ee</color>
+    <color name="gray_backgroud">#fafcff</color>
 
 </resources>

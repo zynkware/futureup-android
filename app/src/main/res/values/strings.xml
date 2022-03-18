@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">FutureUP</string>
+    <string name="your_wallet">Your Wallet</string>
+    <string name="live_prices">Live prices</string>
+    <string name="balance">Balance</string>
+    <string name="hash">****</string>
+    <string name="holder">HOLDER</string>
 </resources>
