@@ -50,7 +50,7 @@ class WalletFragment : Fragment() {
 
     private fun setUpTopCard() {
         val card = CardModel("0", "Alexandru's Samsung", 29.200, "1234 1234 1234 1234")
-        val balanceString="$" + String.format("%.3f", card.balance)
+        val balanceString = "$" + String.format("%.3f", card.balance)
         binding?.balanecValueTextView?.text = balanceString
         binding?.hash4?.text = card.card_number?.split(" ")?.get(3)
         binding?.holderNameTextView?.text = card.holder_name

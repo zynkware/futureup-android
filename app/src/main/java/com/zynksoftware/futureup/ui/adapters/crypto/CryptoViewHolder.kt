@@ -15,7 +15,7 @@ class CryptoViewHolder(private val binding: ViewHolderCryptoBinding) :
     fun bindData(item: CryptoModel) {
         binding.cryptoImageView.loadImage(item.image)
         binding.cryptoNameTextView.text = item.name
-        binding.percentageTextView.text = "${item.priceChangePercentage24H}%"
+        binding.percentageTextView.text = "${String.format("%.2f", item.priceChangePercentage24H)}%"
         if (item.priceChangePercentage24H == null || item.priceChangePercentage24H < 0) {
             binding.imageBackgroundImageView.setBackgroundColor(
                 ContextCompat.getColor(context, R.color.circular_image_red)
@@ -27,12 +27,11 @@ class CryptoViewHolder(private val binding: ViewHolderCryptoBinding) :
             )
             binding.percentageTextView.setTextColor(ContextCompat.getColor(context, R.color.green))
         }
-        if (item.image==null || item.image==""){
+        if (item.image.isNullOrBlank()) {
             binding.imageBackgroundImageView.setBackgroundColor(
                 ContextCompat.getColor(context, R.color.circular_image_gray)
             )
         }
-
         binding.cryptoValueTextView.text = "${item.currentPrice} USD Value"
     }
 }
