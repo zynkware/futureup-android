@@ -32,6 +32,6 @@ class CryptoViewHolder(private val binding: ViewHolderCryptoBinding) :
                 ContextCompat.getColor(context, R.color.circular_image_gray)
             )
         }
-        binding.cryptoValueTextView.text = "${item.currentPrice} USD Value"
+        binding.cryptoValueTextView.text = context.getString(R.string.coin_value, "${item.currentPrice}")
     }
 }

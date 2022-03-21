@@ -1,5 +1,6 @@
-package com.zynksoftware.futureup.network
+package com.zynksoftware.futureup.network.interceptors
 
+import com.zynksoftware.futureup.network.NetworkNotAvailableException
 import com.zynksoftware.futureup.utils.network.NetworkConnection
 import okhttp3.Interceptor
 import okhttp3.Response

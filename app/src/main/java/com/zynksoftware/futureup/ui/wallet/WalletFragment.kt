@@ -34,9 +34,7 @@ class WalletFragment : Fragment() {
         binding?.recyclerView?.layoutManager = LinearLayoutManager(requireContext())
 
         viewModel.coinsLiveData.observe(this) { items ->
-            val adapter = CryptoAdapter(items) { itemClicked ->
-
-            }
+            val adapter = CryptoAdapter(items)
             binding?.recyclerView?.adapter = adapter
         }
 
