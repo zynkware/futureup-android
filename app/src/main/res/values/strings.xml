@@ -5,4 +5,5 @@
     <string name="balance">Balance</string>
     <string name="hash">****</string>
     <string name="holder">CARD HOLDER</string>
+    <string name="portfolio_title">Portfolio</string>
 </resources>

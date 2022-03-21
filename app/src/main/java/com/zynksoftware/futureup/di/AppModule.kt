@@ -9,6 +9,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.zynksoftware.futureup.BaseApplication
 import com.zynksoftware.futureup.Repository
 import com.zynksoftware.futureup.network.NetworkExceptionHandler
+import com.zynksoftware.futureup.network.NetworkNotAvailableInterceptor
 import com.zynksoftware.futureup.network.RemoteServicesHandler
 import com.zynksoftware.futureup.network.ServiceProvider
 import com.zynksoftware.futureup.ui.wallet.WalletViewModel
@@ -47,7 +48,7 @@ fun provideOkHttpBuilder(): OkHttpClient.Builder {
     BaseApplication.addInterceptors(okHttpClientBuilder)
 
     okHttpClientBuilder
-//        .addInterceptor(NetworkNotAvailableInterceptor())
+        .addInterceptor(NetworkNotAvailableInterceptor())
 //        .addInterceptor(BasicInterceptor())
         .connectTimeout(1, TimeUnit.MINUTES)
         .readTimeout(1, TimeUnit.MINUTES)

@@ -10,5 +10,15 @@
         android:name="com.zynksoftware.futureup.ui.wallet.WalletFragment"
         tools:layout="@layout/fragment_wallet" >
 
+        <action
+            android:id="@+id/action_walletFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/portfolioFragment"
+        android:name="com.zynksoftware.futureup.ui.portofolio.PortfolioFragment"
+        tools:layout="@layout/fragment_portfolio">
+
     </fragment>
 </navigation>
