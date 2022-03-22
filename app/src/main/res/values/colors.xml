@@ -24,5 +24,6 @@
     <color name="circular_image_green">#e2faec</color>
     <color name="circular_image_red">#fee8ee</color>
     <color name="gray_backgroud">#fafcff</color>
+    <color name="button_color">#7472DE</color>
 
 </resources>

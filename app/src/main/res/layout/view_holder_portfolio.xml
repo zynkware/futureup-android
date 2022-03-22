@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="110dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/portfolioCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_size_25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="@dimen/margin_size_25dp"
+        android:layout_marginBottom="15dp"
+        android:elevation="40dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/coinNamePortfolio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_size_20dp"
+                android:fontFamily="@font/avenirltstd_roman"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/coinImagePortfolio"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/coinImagePortfolio"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="@dimen/margin_size_20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/coinNamePortfolio"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+            <TextView
+                android:id="@+id/coinSymbolPortofilo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_size_5dp"
+                android:fontFamily="@font/avenirltstd_roman"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/coinImagePortfolio"
+                app:layout_constraintStart_toEndOf="@id/coinImagePortfolio"
+                app:layout_constraintTop_toTopOf="@id/coinImagePortfolio" />
+
+            <TextView
+                android:id="@+id/usdValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_size_20dp"
+                android:fontFamily="@font/avenirltstd_roman"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/coinNamePortfolio" />
+
+            <TextView
+                android:id="@+id/tokenAmountValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_size_20dp"
+                android:fontFamily="@font/avenirltstd_roman"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/coinSymbolPortofilo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/coinSymbolPortofilo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

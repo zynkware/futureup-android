@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.zynksoftware.futureup.R
 import com.zynksoftware.futureup.databinding.FragmentWalletBinding
 import com.zynksoftware.futureup.extensions.navigateToNextDestination
-import com.zynksoftware.futureup.models.CardModel
 import com.zynksoftware.futureup.ui.adapters.crypto.CryptoAdapter
+import com.zynksoftware.futureup.utils.portfolio.PortfolioUtils
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WalletFragment : Fragment() {
@@ -57,10 +58,9 @@ class WalletFragment : Fragment() {
     }
 
     private fun setUpTopCard() {
-        val card = CardModel("0", "Alexandru's Samsung", 29.200, "1234 1234 1234 1234")
-        val balanceString = "$" + String.format("%.3f", card.balance)
-        binding?.balanecValueTextView?.text = balanceString
-        binding?.hash4?.text = card.card_number?.split(" ")?.get(3)
-        binding?.holderNameTextView?.text = card.holder_name
+        binding?.balanceValueTextView?.text =
+            getString(R.string.coin_value, "${PortfolioUtils.getTotalBalance()}")
+        binding?.hash4?.text = getString(R.string.card_number)
+        binding?.holderNameTextView?.text = getString(R.string.holder_name)
     }
 }
