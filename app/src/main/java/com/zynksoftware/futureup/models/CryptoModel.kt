@@ -16,5 +16,4 @@ data class CryptoModel(
     @Json(name = "price_change_24h") val priceChange24H: Double? = null,
     @Json(name = "price_change_percentage_24h") val priceChangePercentage24H: Double? = null,
     @Json(name = "last_updated") val lastUpdated: String? = null,
-//    @Json(name = "sparkline_in_7d") val sparklineIn7D: Array<Double>? = null
 )

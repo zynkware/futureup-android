@@ -1,7 +1,6 @@
 package com.zynksoftware.futureup.ui.portofolio
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.shape.CornerFamily
 import com.zynksoftware.futureup.R
-import com.zynksoftware.futureup.TemporaryDB
 import com.zynksoftware.futureup.databinding.FragmentPortfolioBinding
-import com.zynksoftware.futureup.models.PortfolioCoinModel
 import com.zynksoftware.futureup.ui.adapters.portfolio.PortfolioAdapter
-import com.zynksoftware.futureup.utils.portfolio.PortfolioUtils
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PortfolioFragment : Fragment() {
 
     private var binding: FragmentPortfolioBinding? = null
+    private val viewModel: PortfolioViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,10 +30,20 @@ class PortfolioFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.portfolioRecyclerView?.layoutManager = LinearLayoutManager(requireContext())
-        val adapter = PortfolioAdapter(TemporaryDB.myCoins)
-        binding?.portfolioRecyclerView?.adapter = adapter
 
+        viewModel.portfolioLiveData.observe(this) { portfolioCoins ->
+            binding?.portfolioRecyclerView?.adapter = PortfolioAdapter(portfolioCoins)
+        }
+
+        viewModel.portfolioBalance.observe(this) { balance ->
+            binding?.dashboardBalanceValueTextView?.text = getString(R.string.coin_value, balance)
+        }
         setUpDashboard()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getPortfolioCoins()
     }
 
     private fun setUpDashboard() {
@@ -47,7 +55,5 @@ class PortfolioFragment : Fragment() {
         binding?.backImageView?.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding?.dashboardBalanceValueTextView?.text =
-            getString(R.string.coin_value, "${PortfolioUtils.getTotalBalance()}")
     }
 }

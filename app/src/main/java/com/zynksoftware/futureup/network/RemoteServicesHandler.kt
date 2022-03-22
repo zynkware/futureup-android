@@ -7,10 +7,6 @@ import retrofit2.Response
 
 class RemoteServicesHandler(private val errorHandler: NetworkExceptionHandler) {
 
-    companion object {
-        private val TAG = RemoteServicesHandler::class.simpleName
-    }
-
     suspend fun <T : Any, R : Response<*>> makeTheCallAndHandleResponse(
         serviceCall: suspend () -> (R),
         mapSuccess: (R) -> Resource<T>
