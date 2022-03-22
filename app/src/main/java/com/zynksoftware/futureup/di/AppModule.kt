@@ -12,8 +12,10 @@ import com.zynksoftware.futureup.network.NetworkExceptionHandler
 import com.zynksoftware.futureup.network.interceptors.NetworkNotAvailableInterceptor
 import com.zynksoftware.futureup.network.RemoteServicesHandler
 import com.zynksoftware.futureup.network.ServiceProvider
+import com.zynksoftware.futureup.ui.portofolio.PortfolioViewModel
 import com.zynksoftware.futureup.ui.wallet.WalletViewModel
 import com.zynksoftware.futureup.usecase.GetCoinsUseCase
+import com.zynksoftware.futureup.usecase.GetTotalBalanceUseCase
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -22,7 +24,8 @@ import java.util.concurrent.TimeUnit
 
 
 val viewModelModule = module {
-    viewModel { WalletViewModel(get()) }
+    viewModel { WalletViewModel(get(), get()) }
+    viewModel { PortfolioViewModel(get(), get()) }
 }
 
 val repositoryModule = module {
@@ -31,7 +34,7 @@ val repositoryModule = module {
 }
 
 val utilsModule = module {
-    single { NetworkExceptionHandler() }
+    single { NetworkExceptionHandler(get()) }
     single { RemoteServicesHandler(get()) }
     single { provideMoshi() }
     single { provideOkHttpBuilder() }
@@ -40,6 +43,7 @@ val utilsModule = module {
 
 val useCaseModule = module {
     single { GetCoinsUseCase(get()) }
+    single { GetTotalBalanceUseCase(get()) }
 }
 
 fun provideOkHttpBuilder(): OkHttpClient.Builder {

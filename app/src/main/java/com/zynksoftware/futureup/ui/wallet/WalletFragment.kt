@@ -59,8 +59,8 @@ class WalletFragment : Fragment() {
 
     private fun setUpTopCard() {
         binding?.balanceValueTextView?.text =
-            getString(R.string.coin_value, "${PortfolioUtils.getTotalBalance()}")
+            getString(R.string.coin_value, viewModel.getTotalBalance())
         binding?.hash4?.text = getString(R.string.card_number)
-        binding?.holderNameTextView?.text = getString(R.string.holder_name)
+        binding?.holderNameTextView?.text = PortfolioUtils.getDeviceName()
     }
 }

@@ -5,9 +5,9 @@
     <string name="balance">Balance</string>
     <string name="hash">****</string>
     <string name="holder">CARD HOLDER</string>
-    <string name="portfolio_title">Portfolio</string>
     <string name="coin_value">$%s</string>
     <string name="portfolio">Portfolio</string>
     <string name="card_number">1234</string>
-    <string name="holder_name">Alexandru\'s Samsung</string>
+    <string name="no_network_available">No network available</string>
+    <string name="something_went_wrong">Something went wrong</string>
 </resources>

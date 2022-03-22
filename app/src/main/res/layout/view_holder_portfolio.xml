@@ -9,9 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/margin_size_25dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="@dimen/margin_size_25dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:elevation="40dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp">
