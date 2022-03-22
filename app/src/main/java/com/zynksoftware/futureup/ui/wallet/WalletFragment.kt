@@ -1,7 +1,6 @@
 package com.zynksoftware.futureup.ui.wallet
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,7 +58,7 @@ class WalletFragment : Fragment() {
     }
 
     private fun setUpTopCard() {
-        binding?.balanecValueTextView?.text =
+        binding?.balanceValueTextView?.text =
             getString(R.string.coin_value, "${PortfolioUtils.getTotalBalance()}")
         binding?.hash4?.text = getString(R.string.card_number)
         binding?.holderNameTextView?.text = getString(R.string.holder_name)

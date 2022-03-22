@@ -14,9 +14,8 @@ class PortfolioViewHolder(private val binding: ViewHolderPortfolioBinding) :
     fun bindData(item: PortfolioCoinModel) {
         binding.coinNamePortfolio.text = item.name
         binding.coinSymbolPortofilo.text = item.symbol
-        val tokenAmount = item.token_amount.toString() + " " + item.symbol
-        binding.tokenAmountValue.text = tokenAmount
-        binding.usdValue.text = context.getString(R.string.coin_value, "${item.usd_value}")
+        binding.tokenAmountValue.text = "${item.tokenAmount} ${item.symbol}"
+        binding.usdValue.text = context.getString(R.string.coin_value, "${item.usdValue}")
         binding.coinImagePortfolio.loadImage(item.image)
     }
 }

@@ -7,7 +7,13 @@ object PortfolioUtils {
     fun getTotalBalance(): Double {
         var balance = 0.0
         for (coin in TemporaryDB.myCoins) {
-            balance += coin.usd_value!!
+            if(coin.usdValue!=null){
+
+                balance += coin.usdValue
+            }
+            else{
+                balance+=0
+            }
         }
         return balance
     }

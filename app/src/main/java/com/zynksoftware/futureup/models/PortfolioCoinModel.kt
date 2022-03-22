@@ -5,6 +5,6 @@ class PortfolioCoinModel(
     val symbol: String? = null,
     val name: String? = null,
     val image: String? = null,
-    val usd_value: Double? = null,
-    val token_amount: Double? = null,
+    val usdValue: Double? = null,
+    val tokenAmount: Double? = null,
 )
