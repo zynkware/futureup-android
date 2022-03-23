@@ -93,7 +93,7 @@
         android:layout_marginStart="@dimen/margin_size_100dp"
         android:layout_marginEnd="@dimen/margin_size_100dp"
         android:layout_marginBottom="@dimen/margin_size_50dp"
-        android:text="Add new coins"
+        android:text="@string/add_new_coins"
         app:icon="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

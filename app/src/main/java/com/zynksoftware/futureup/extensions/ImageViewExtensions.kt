@@ -5,7 +5,7 @@ import com.bumptech.glide.Glide
 
 
 fun ImageView.loadImage(url: String?) {
-    if(url != null) {
+    if (url != null) {
         Glide.with(this)
             .load(url)
             .into(this)

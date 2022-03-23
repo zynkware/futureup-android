@@ -53,7 +53,6 @@ fun provideOkHttpBuilder(): OkHttpClient.Builder {
 
     okHttpClientBuilder
         .addInterceptor(NetworkNotAvailableInterceptor())
-//        .addInterceptor(BasicInterceptor())
         .connectTimeout(1, TimeUnit.MINUTES)
         .readTimeout(1, TimeUnit.MINUTES)
         .writeTimeout(1, TimeUnit.MINUTES)
