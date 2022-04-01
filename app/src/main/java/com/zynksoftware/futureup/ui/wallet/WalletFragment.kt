@@ -34,12 +34,12 @@ class WalletFragment : Fragment() {
 
         binding?.recyclerView?.layoutManager = LinearLayoutManager(requireContext())
 
-        viewModel.coinsLiveData.observe(this) { items ->
+        viewModel.coinsLiveData.observe(viewLifecycleOwner) { items ->
             val adapter = CryptoAdapter(items)
             binding?.recyclerView?.adapter = adapter
         }
 
-        viewModel.errorMessage.observe(this) { error ->
+        viewModel.errorMessage.observe(viewLifecycleOwner) { error ->
             Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
         }
 
